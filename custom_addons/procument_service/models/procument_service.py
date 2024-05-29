@@ -28,3 +28,7 @@ class ProcumentService(models.Model):
     procument_service_id = fields.Many2one("procument.service", string="Procument Service")
     total = fields.Float(string="Total", compute="_compute_total")
 
+    @api.depends('product_id','quantity','unit_price')
+    def _compute_total(self):
+        for rec in self:
+            rec.total = rec.quantity * rec.unit_price
