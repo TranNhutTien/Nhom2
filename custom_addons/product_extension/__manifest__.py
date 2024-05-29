@@ -9,5 +9,6 @@
         "security/ir.model.access.csv",
         "views/brand_list.xml",
         "views/menu_brand.xml",
+        "views/product_extension.xml",
     ],
 }
