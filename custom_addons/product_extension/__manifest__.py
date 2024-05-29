@@ -6,7 +6,8 @@
     "depends": ["product"],
     "application": False,
     "data":[
-       "views/brand_list.xml"
-       "views/menu_brand.xml"
+        "security/ir.model.access.csv"
+        "views/brand_list.xml"
+        "views/menu_brand.xml"
     ],
 }
