@@ -12,5 +12,7 @@
         "data/seq_procument_service.xml",
         "views/procument_service_details.xml",
         "views/menu.xml",
+        "report/procument_service.xml",
+        "report/report.xml",
     ],
 }
