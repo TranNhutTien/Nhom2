@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="report_procument_service" model="ir.actions.report">
+        <field name="name">Report Procument Service</field>
+        <field name="model">procument.service</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">procument_service.report_procument_service_id</field>
+        <field name="report_file">procument_service.report_procument_service_id</field>
+        <field name="binding_model_id" ref="model_procument_service"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
