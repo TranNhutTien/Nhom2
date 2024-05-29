@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_procument_service" model= "ir.actions.act_window">
+        <field name="name">Procument Service</field>
+        <field name="res_model">procument.service</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem 
+        id="menu_procument_service" 
+        name="Procument Service"
+    />
+
+    <menuitem 
+        id="menu_procument_service_details"
+        name="Procument Service Details"
+        parent="menu_procument_service"
+        action="action_procument_service"
+    />
+</odoo>
