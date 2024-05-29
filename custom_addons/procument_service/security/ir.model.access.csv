@@ -1,5 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_proser_staff,ProSerUser,model_procument_service,procument_service_user,1,1,1,0
+access_proser_staff,ProSerStaff,model_procument_service,procument_service_user,1,1,1,0
 access_proser_manager,ProSerManager,model_procument_service,procument_service_manager,1,1,1,1
-
+access_details_staff,ProcSerDetailStaff,model_procument_service_lines,procument_service_user,1,1,1,0
+access_details_manager,ProcSerDetailManager,model_procument_service_lines,procument_service_manager,1,1,1,1
 
