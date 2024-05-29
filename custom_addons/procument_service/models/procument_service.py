@@ -10,6 +10,9 @@ class ProcumentService(models.Model):
     customer_id = fields.Many2one("res.partner", string="Customer", required=True)
     vendor_id = fields.Many2one("res.partner", string="Vendor", required=True)
     order_line_ids = fields.One2many("procument.service.lines", "procument_service_id", string="Order Lines")
+    state = fields.Selection([("draft", "Draft"), ("confirm","Confirmed"),
+                              ("done","Done"), ("cancel","Cancelled")],
+                              default="draft", string ="Status")
 
     @api.model
     def create(self, vals):
@@ -18,6 +21,15 @@ class ProcumentService(models.Model):
         res = super(ProcumentService, self).create(vals)
         return res
 
+    def action_draft(self):
+        self.state="draft"
+    def action_confirm(self):
+        self.state="confirm"
+    def action_done(self):
+        self.state="done"
+    def action_cancel(self):
+        self.state="cancel"
+        
 class ProcumentServiceLines(models.Model):
     _name = "procument.service.lines"
     _description = "Procument Service Lines"
