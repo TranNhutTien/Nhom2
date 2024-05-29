@@ -6,7 +6,9 @@
                 <t t-foreach="docs" t-as="o">
                     <div class="page">
                         <h2 class="text-center">
-                            <span>Procument Service Detail</span>
+                            <span>
+                                <strong>Procument Service Detail</strong>
+                            </span>
                         </h2>
                         <br/>
                         <h3 class="text-left">
