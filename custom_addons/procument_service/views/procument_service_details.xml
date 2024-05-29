@@ -21,6 +21,25 @@
                             <field name="date" />
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Order Line">
+                            <field name="order_line_ids">
+                                <tree>
+                                   <field name="product_id"/>
+                                   <field name="quantity"/>
+                                   <field name="unit_price"/>
+                                   <field name="total"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="product_id"/>
+                                        <field name="quantity"/>
+                                        <field name="unit_price"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
