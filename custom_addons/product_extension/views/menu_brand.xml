@@ -9,19 +9,22 @@
     <menuitem
         id="menu_brand_list_sale"
         name="Brand List"
-        parent="sale.product_menu_catalog" 
+        parent="sale.product_menu_catalog"
+        sequence="-1"
         action="action_brand_list"
     />
     <menuitem
         id="menu_brand_list_purchase"
         name="Brand List"
         parent="purchase.menu_purchase_products" 
+        sequence="-1"
         action="action_brand_list"
     />
     <menuitem
         id="menu_brand_list_stock"
         name="Brand List"
         parent="stock.menu_stock_inventory_control" 
+        sequence="-1"
         action="action_brand_list"
     />
     
