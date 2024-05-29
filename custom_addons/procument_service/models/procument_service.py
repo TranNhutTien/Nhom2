@@ -3,12 +3,13 @@ from odoo import fields, models, api, _
 class ProcumentService(models.Model):
     _name = "procument.service"
     _description = "Procument Service"
-   
+    _inherit=['mail.thread','mail.activity.mixin']
+
     name = fields.Char(string='Order Reference', readonly=True, default=lambda self: _('New'))
     date = fields.Date(string="Order Date", default=fields.Date.context_today)
     ref = fields.Char(string="Reference")
-    customer_id = fields.Many2one("res.partner", string="Customer", required=True)
-    vendor_id = fields.Many2one("res.partner", string="Vendor", required=True)
+    customer_id = fields.Many2one("res.partner", string="Customer", required=True, tracking=True)
+    vendor_id = fields.Many2one("res.partner", string="Vendor", required=True, tracking=True)
     order_line_ids = fields.One2many("procument.service.lines", "procument_service_id", string="Order Lines")
     state = fields.Selection([("draft", "Draft"), ("confirm","Confirmed"),
                               ("done","Done"), ("cancel","Cancelled")],
@@ -29,7 +30,7 @@ class ProcumentService(models.Model):
         self.state="done"
     def action_cancel(self):
         self.state="cancel"
-        
+
 class ProcumentServiceLines(models.Model):
     _name = "procument.service.lines"
     _description = "Procument Service Lines"
