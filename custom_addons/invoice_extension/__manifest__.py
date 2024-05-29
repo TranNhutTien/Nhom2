@@ -6,5 +6,6 @@
     "depends": ["account"],
     "application": False,
     "data":[
+        "views/invoice_extension.xml",
     ],
 }
