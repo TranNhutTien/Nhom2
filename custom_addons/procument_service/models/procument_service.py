@@ -14,6 +14,10 @@ class ProcumentService(models.Model):
     state = fields.Selection([("draft", "Draft"), ("confirm","Confirmed"),
                               ("done","Done"), ("cancel","Cancelled")],
                               default="draft", string ="Status")
+    priority = fields.Selection([
+        ('0', "Normal"),
+        ('1', "High"),
+    ])
 
     @api.model
     def create(self, vals):
