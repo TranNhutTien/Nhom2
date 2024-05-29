@@ -65,7 +65,9 @@
         <field name="name">Procument Service List</field>
         <field name="model">procument.service</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree decoration-success="state=='done'"
+                  decoration-info="state=='confirm'"
+                  decoration-danger="state=='cancel'">
                 <field name="name"/>
                 <field name="customer_id"/>
                 <field name="vendor_id"/>
