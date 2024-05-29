@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+    <!-- Staff Group -->
+        <record id="procument_service_user" model="res.groups">
+            <field name="name">Procument Staff</field>
+            <field name="category_id"
+                ref="base.module_category_services_procument_service"
+            />
+            <field name="implied_ids"
+                eval="[(4, ref('base.group_user'))]"
+            />
+        </record>
+    </data>
+    
+    <!-- Manager Group -->
+    <record id="procument_service_manager" model="res.groups">
+        <field name="name">Procument Manager</field>
+        <field name="category_id"
+            ref="base.module_category_services_procument_service"
+        />
+        <field name="implied_ids"
+            eval="[(4, ref('procument_service_user'))]"
+        />
+        <field name="users"
+            eval="[(4, ref('base.user_root')),
+            (4, ref('base.user_admin'))]"
+        />
+    </record>
+</odoo>
