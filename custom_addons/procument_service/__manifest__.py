@@ -9,6 +9,7 @@
     "data":[
         "security/procument_service_security.xml",
         "security/ir.model.access.csv",
+        "data/seq_procument_service.xml"
         "views/procument_service_details.xml",
         "views/menu.xml",
     ],
