@@ -16,3 +16,21 @@ class InvoiceExtension(models.Model):
     price_unit = fields.Float(string='Unit Price')
     discount = fields.Float(string='Discount (%)')
     tax_ids = fields.Many2many(comodel_name='account.tax', string="Taxes")
+
+    @api.onchange('previous_invoice')
+    def onchange_previous_invoice(self):
+        if self.preview_invoice:
+            self.partner_id = self.previous_invoice.partner_id
+            self.payment_reference = self.previous_invoice.payment_reference
+            self.invoice_date = self.previous_invoice.invoice_date
+            self.invoice_date_due = self.previous_invoice.invoice_date_due
+            self.invoice_payment_term_id = self.previous_invoice.invoice_payment_term_id
+            self.currency_id = self.previous_invoice.currency_id
+            self.invoice_line_ids = self.previous_invoice.invoice_line_ids
+        else:
+            self.partner_id=""
+            self.invoice_date=""
+            self.invoice_date_due=""
+            self.invoice_payment_term_id=""
+            self.currency_id=""
+            self.invoice_line_ids=""
