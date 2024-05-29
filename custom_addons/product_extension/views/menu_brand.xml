@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_brand_list" model= "ir.actions.act_window">
+        <field name="name">Brand List</field>
+        <field name="res_model">brand.list</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_brand_list_sale"
+        name="Brand List"
+        parent="sale.product_menu_catalog" 
+        action="action_brand_list"
+    />
+    <menuitem
+        id="menu_brand_list_purchase"
+        name="Brand List"
+        parent="purchase.menu_purchase_products" 
+        action="action_brand_list"
+    />
+    <menuitem
+        id="menu_brand_list_stock"
+        name="Brand List"
+        parent="stock.menu_stock_inventory_control" 
+        action="action_brand_list"
+    />
+    
+</odoo>
