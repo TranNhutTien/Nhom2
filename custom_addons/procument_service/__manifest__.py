@@ -8,7 +8,7 @@
     "category": "Services/Procument Service",
     "data":[
         "security/procument_service_security.xml",
-        "security/ir.model.access.csv"
+        "security/ir.model.access.csv",
         "views/procument_service_details.xml",
         "views/menu.xml",
     ],
