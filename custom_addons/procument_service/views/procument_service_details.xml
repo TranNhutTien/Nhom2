@@ -70,7 +70,7 @@
                 <field name="customer_id"/>
                 <field name="vendor_id"/>
                 <field name="date"/>
-                <field name="state"/>
+                <field name="state" widget="badge"/>
             </tree>
         </field>
     </record>
