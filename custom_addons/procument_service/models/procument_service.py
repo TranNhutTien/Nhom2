@@ -18,7 +18,7 @@ class ProcumentService(models.Model):
         res = super(ProcumentService, self).create(vals)
         return res
 
-    class ProcumentServiceLines(models.Model):
+class ProcumentServiceLines(models.Model):
     _name = "procument.service.lines"
     _description = "Procument Service Lines"
 
