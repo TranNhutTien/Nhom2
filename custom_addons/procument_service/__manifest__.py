@@ -3,7 +3,7 @@
     "name": "Procument Service",
     "license": "AGPL-3",
     "author": "Nhom 2",
-    "depends": ["product"],
+    "depends": ["product","mail"],
     "application": True,
     "category": "Services/Procument Service",
     "data":[
