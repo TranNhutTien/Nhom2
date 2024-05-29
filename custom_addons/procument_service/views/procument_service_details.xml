@@ -70,7 +70,11 @@
                 <field name="customer_id"/>
                 <field name="vendor_id"/>
                 <field name="date"/>
-                <field name="state" widget="badge"/>
+                <field name="state" 
+                    decoration-success="state=='done'"
+                    decoration-info="state=='confirm'"
+                    decoration-danger="state=='cancel'"
+                    widget="badge"/>
             </tree>
         </field>
     </record>
