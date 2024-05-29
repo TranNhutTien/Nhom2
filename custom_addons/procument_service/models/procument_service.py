@@ -9,6 +9,7 @@ class ProcumentService(models.Model):
     ref = fields.Char(string="Reference")
     customer_id = fields.Many2one("res.partner", string="Customer", required=True)
     vendor_id = fields.Many2one("res.partner", string="Vendor", required=True)
+    order_line_ids = fields.One2many("procument.service.lines", "procument_service_id", string="Order Lines")
 
     @api.model
     def create(self, vals):
@@ -17,5 +18,13 @@ class ProcumentService(models.Model):
         res = super(ProcumentService, self).create(vals)
         return res
 
-    
+    class ProcumentServiceLines(models.Model):
+    _name = "procument.service.lines"
+    _description = "Procument Service Lines"
+
+    product_id = fields.Many2one("product.product", string="Product", required=True)
+    quantity = fields.Integer(string="Quantity", default=1)
+    unit_price = fields.Float(string="Unit Price")
+    procument_service_id = fields.Many2one("procument.service", string="Procument Service")
+    total = fields.Float(string="Total", compute="_compute_total")
 
