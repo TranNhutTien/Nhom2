@@ -6,6 +6,7 @@
     "depends": ["product"],
     "application": False,
     "data":[
-       
+       "views/brand_list.xml"
+       "views/menu_brand.xml"
     ],
 }
