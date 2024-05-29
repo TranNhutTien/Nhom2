@@ -3,7 +3,7 @@
     "name": "Product Extension",
     "license": "AGPL-3",
     "author": "Nhom 2",
-    "depends": ["product"],
+    "depends": ["product","mail"],
     "application": False,
     "data":[
         "security/ir.model.access.csv",
